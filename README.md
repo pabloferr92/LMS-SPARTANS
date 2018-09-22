@@ -1,2 +1,3 @@
-# LMS-SPARTANS
-Projeto LMS Grupo Spartans Impacta 2018
+# lms-atividades-continuas-spartans
+lms-atividades-continuas-spartans created by GitHub Classroom
+Arquivo

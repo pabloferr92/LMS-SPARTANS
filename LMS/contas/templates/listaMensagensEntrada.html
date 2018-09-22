@@ -1,0 +1,51 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">Caixa de Entrada de {{request.sessao.usuario.nome}}</h1>
+                </div>
+                <div>
+                    <a class="buttonInsert" href="{% url "inserirmensagem" %}">+</a>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Assunto
+                                </th>
+                                <th>
+                                    ALTERAR CONTEUDO
+                                </th>
+                                <th>
+                                    REMOVER
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for mensagem in mensagens %}
+                                <tr>
+                                    <td>
+                                        {%if mensagem.origem == "A" %}
+                                            {{ mensagem.assunto }} de {{mensagem.idaluno.nome}} para {{mensagem.idprofessor.nome}}
+                                        {% else %}
+                                            {{ mensagem.assunto }} de {{mensagem.idprofessor.nome}} para {{mensagem.idaluno.nome}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a class="myButton" href="{% url 'alterarmensagem' mensagem.idmensagem %}">ALTERAR</a>
+                                    </td>
+                                    <td>
+                                        {% if mensagem.origem == request.sessao.usuario.profile %}
+                                            <a class="myButton" href="{% url 'deletarmensagem' mensagem.idmensagem %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+{% endblock %}

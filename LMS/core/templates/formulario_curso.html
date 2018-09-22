@@ -1,0 +1,113 @@
+{% extends "baseforms.html" %}
+{% block content %}
+{% load %}
+
+		<main>
+			<div class="containers" id="novocurso">
+				<form id="formularioCurso" autocomplete="off" method="POST" action="painel_admin.html">
+					<h1>ADICIONAR NOVO CURSO</h1>
+
+				    <fieldset>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">NOME DO CURSO</strong>
+	                            <input class="inputForm" type="text" name="nome_curso" placeholder="Banco de Dados" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">SOBRE O CURSO</strong>
+	                            <textarea class="inputForm textAreaPadrao" name="sobre_o_curso"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">TIPO DO CURSO</strong>
+	                            <select class="inputForm" name="tipo_do_curso" required="required">
+									<option value="Bacharelado">Bacharelado</option>
+									<option value="Tecnólogo">Tecnólogo</option>
+									<option value="Licenciatura">Licenciatura</option>
+								</select>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">CARGA HORÁRIA</strong>
+	                            <input class="inputForm" type="number" name="carga_horaria" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+							<label class="labelForm">
+								<strong class="strongLabelForm">MODALIDADE</strong>
+								<select class="inputForm" name="modalidade" required="required">
+									<option value="Presencial">Presencial</option>
+									<option value="EAD">EAD</option>
+								</select>
+							</label>
+						</div>
+						<div class="containerInputForm">
+							<label class="labelForm">
+								<strong class="strongLabelForm">UNIDADE</strong>
+								<select class="inputForm" name="unidade" required="required">
+									<option value="Barra Funda">Barra Funda</option>
+									<option value="Paulista">Paulista</option>
+								</select>
+							</label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERÍODO MATUTINO (INÍCIO)</strong>
+	                            <input class="inputForm" type="time" name="periodo_matutino_inicio" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERÍODO MATUTINO (FIM)</strong>
+	                            <input class="inputForm" type="time" name="periodo_matutino_fim" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERÍODO NOTURNO (INÍCIO)</strong>
+	                            <input class="inputForm" type="time" name="periodo_noturno_inicio" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERÍODO NOTURNO (FIM)</strong>
+	                            <input class="inputForm" type="time" name="periodo_noturno_fim" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERÍODO MATUTINO (INÍCIO)</strong>
+	                            <input class="inputForm" type="time" name="periodo_matutino_inicio" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">MENSALIDADE MATUTINA</strong>
+	                            <input class="inputForm" type="text" name="mensalidade_matutina" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">MENSALIDADE NOTURNA</strong>
+	                            <input class="inputForm" type="text" name="mensalidade_noturna" required="required">
+	                        </label>
+						</div>
+                        <div id="divSubmitCurso">
+                            <input type="submit" class="btn" value="SALVAR">
+                        </div>
+                    </fieldset>
+				</form>
+				<ul>
+					<li>
+						{% for i in cursos %}
+						pablo {{ i }}
+						{% endfor %}
+					</li>
+				</ul>
+			</div>
+		</main>
+{% endblock %}

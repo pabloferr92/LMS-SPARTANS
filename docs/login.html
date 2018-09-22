@@ -1,0 +1,40 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+		<title>Faculdade Impacta - Login</title>
+		<link rel="stylesheet" type="text/css" href="layout.css">
+		<link rel="stylesheet" href="normalize.css">
+	</head>
+	<body id="bodyLogin">
+    	<main id="mainlogin">
+        	<div id="arealogin">
+				<img src="img/logo.png" alt="logo da impacta" id="logoLogin" >
+                <form id="formulario" autocomplete="off" method="POST" action="painel_admin.html">
+                    <fieldset>
+						<div class="containerInput">
+	                        <label>
+	                            <strong class="label">EMAIL</strong>
+	                            <input class="inputLogin" type="email" name="email">
+	                        </label>
+						</div>
+						<div class="containerInput">
+	                        <label>
+	                            <strong class="label">SENHA</strong>
+	                            <input class="inputLogin" type="password" name="senha">
+	                        </label>
+						</div>
+						<div class="containerInput">
+	                        <label id="rememberLabel">
+	                            <input type="checkbox" checked="checked" name="remember">
+								<strong class="label">LEMBRAR-ME</strong>
+	                        </label>
+						</div>
+                        <div id="divSubmit">
+                            <input type="submit" class="btn" value="FAZER LOGIN">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+    	</main>
+	</body>
+</html>

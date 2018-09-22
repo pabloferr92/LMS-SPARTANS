@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+        <main class="main">
+            <h1 class="tituloMain">SPARTANS<br/>É NOIS QUE VOA.</h1>
+            <img src="{% static "img/search.png" %}" alt="introdução da spartans" id="imgTopo">
+            <div>
+                <h1 class="titulosContainer">NOTÍCIAS</h1>
+
+                <div class="containers" id="noticias">
+                    <div class="card">
+                        <img src="{% static "img/noticia1.jpg" %}" alt="imagem da noticia" class="imgNoticia"/>
+                        <div class="conteudoNoticia">
+                            <h2 class="titulocard">Noticia 1</h2>
+                            <p class="textocard">Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Paisis, filhis, espiritis santis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{% static "img/noticia2.jpg" %}" alt="imagem da noticia"  class="imgNoticia">
+                        <div class="conteudoNoticia">
+                            <h2 class="titulocard">Noticia 2</h2>
+                            <p class="textocard">Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Paisis, filhis, espiritis santis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{% static "img/noticia3.jpg" %}" alt="imagem da noticia"  class="imgNoticia">
+                        <div class="conteudoNoticia">
+                            <h2 class="titulocard">Noticia 3</h2>
+                            <p class="textocard">Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Paisis, filhis, espiritis santis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{% static "img/noticia4.jpg" %}" alt="imagem da noticia"  class="imgNoticia">
+                        <div class="conteudoNoticia">
+                            <h2 class="titulocard">Noticia 4</h2>
+                            <p class="textocard">Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Paisis, filhis, espiritis santis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="titulosContainer">DEPOIMENTOS</h1>
+                <div class="containers" id="depoimentos">
+                    <div class="depoimento">
+                        <h2 class="tituloDepoimento">Achei do Caralho!</h2>
+                        <p class="textoDepoimento">A impacta me proporcionou uma experiência muito boa! Ótimos professores, ótimos alunos, ótimo material, ótimos ótimo.</p>
+                        <p class="assinaturaDepoimento">Um aluno contente</p>
+                    </div>
+                    <div class="depoimento">
+                        <h2 class="tituloDepoimento">Achei uma bosta!!!</h2>
+                        <p class="textoDepoimento">Uma faculdade ruim, material horrível, desorganização total, a wifi não funciona, internet nem se fala.</p>
+                        <p class="assinaturaDepoimento">Um aluno descontente</p>
+                    </div>
+                    <div class="depoimento">
+                        <h2 class="tituloDepoimento">Nem sei o que achar!</h2>
+                        <p class="textoDepoimento">Fiquei confuso. Acho que é bom mas é ruim também. A parte boa é que não é tão ruim, a parte ruim é que não é tão boa.</p>
+                        <p class="assinaturaDepoimento">Um aluno confuso</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="titulosContainer">PRÊMIOS</h1>
+                <div class="containers" id="premios">
+                    <div class="premio">
+                        <img class="iconeTitulo" alt="imagem do premio" src="{% static "img/premio1.png" %}" >
+                        <h2 class="tituloPremio">Prêmio Faculdade da Galáxia</h2>
+                        <p class="textoPremio">A impacta possui o prêmio de melhor faculdade dessa galáxia. (Não temos informações sobre outras galáxias)</p>
+                    </div>
+                    <div class="premio">
+                        <img class="iconeTitulo" alt="imagem do premio" src="{% static "img/premio2.png" %}" >
+                        <h2 class="tituloPremio">A mais Topperson!</h2>
+                        <p class="textoPremio">A impacta possui o prêmio de faculdade mais TOPzera da porra toda</p>
+                    </div>
+                    <div class="premio">
+                        <img class="iconeTitulo" alt="imagem do premio" src="{% static "img/premio3.png" %}" >
+                        <h2 class="tituloPremio">Prêmio Pullitzer</h2>
+                        <p class="textoPremio">A impacta possui o prêmio de Pullitzer pq eu não faço idéia de pra que ele sirva</p>
+                    </div>
+                    <div class="premio">
+                        <img class="iconeTitulo" alt="imagem do premio" src="{% static "img/premio4.png" %}" >
+                        <h2 class="tituloPremio">Prêmio Nobel da Ciência</h2>
+                        <p class="textoPremio">A impacta possui o prêmio Nobel da Ciencia. Pq isso não é nada pretencioso</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}

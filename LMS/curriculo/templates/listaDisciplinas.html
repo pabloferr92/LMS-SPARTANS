@@ -1,0 +1,52 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DISCIPLINAS</h1>
+                </div>
+                <div>
+                    <a class="buttonInsert" href="{% url "inserirdisciplina" %}">+</a>
+                </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        NOME DO CURSO
+                                    </th>
+                                    <th>
+                                        ALTERAR
+                                    </th>
+                                    <th>
+                                        OFERTAR
+                                    </th>
+                                    <th>
+                                        REMOVER
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for disciplina in disciplinas %}
+                                    <tr>
+                                        <td>
+                                            {{ disciplina.nome }}
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'alterardisciplina' disciplina.iddisciplina %}">ALTERAR</a>
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'inserirdisciplinaofertada' disciplina.iddisciplina %}">OFERTAR</a>
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'deletardisciplina' disciplina.iddisciplina %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                  </ul>
+                </div>
+            </div>
+        </main>
+{% endblock %}

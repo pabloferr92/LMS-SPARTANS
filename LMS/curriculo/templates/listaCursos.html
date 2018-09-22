@@ -1,0 +1,47 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE CURSOS</h1>
+                </div>
+
+                <div>
+                    <a class="buttonInsert" href="{% url "inserircurso" %}">+</a>
+                </div>
+
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    NOME DO CURSO
+                                </th>
+                                <th>
+                                    ALTERAR
+                                </th>
+                                <th>
+                                    REMOVER
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for curso in cursos %}
+                                <tr>
+                                    <td>
+                                        {{ curso.nome }}
+                                    </td>
+                                    <td>
+                                        <a class="myButton" href="{% url 'alterarcurso' curso.idcurso %}">ALTERAR</a>
+                                    </td>
+                                    <td>
+                                        <a class="myButton" href="{% url 'deletarcurso' curso.idcurso %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+{% endblock %}

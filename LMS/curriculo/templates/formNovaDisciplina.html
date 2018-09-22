@@ -1,0 +1,107 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+    <body id="bodyPrincipal">
+        <main>
+            <div class="containers" id="novocurso">
+                <form id="formularioCurso" autocomplete="off" method="POST" action="">
+                    {% if disciplina.iddisciplina %}
+                        <h1>ALTERAR DISCIPLINA</h1>
+                    {% else %}
+                        <h1>ADICIONAR NOVA DISCIPLINA</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">NOME DA DISCIPLINA</strong>
+                            <input class="inputForm mandatory" type="text" name="nome" value="{{disciplina.nome}}" maxlength="30">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DATA</strong>
+                            <input class="inputForm mandatory" type="date" name="data" value="{{disciplina.data|date:'Y-m-d'}}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">STATUS</strong>
+                            <select name='statusdisc' class="inputForm mandatory" >
+                                <option value="">SELECIONE</option>
+                                <option value="ABERTA" {% if disciplina.statusdisc == "ABERTA" %} selected {% endif %}>ABERTA</option>
+                                <option value="FECHADA" {% if disciplina.statusdisc == "FECHADA" %} selected {% endif %}>FECHADA</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">PLANO DE ENSINO</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="plano" maxlength="1000">{{disciplina.planodeensino}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CARGA HORÁRIA</strong>
+                            <select name='cargahoraria' class="inputForm mandatory" >
+                                <option value="">SELECIONE</option>
+                                <option value="40" {% if disciplina.cargahoraria == 40 %} selected {% endif %}>40 HORAS</option>
+                                <option value="80" {% if disciplina.cargahoraria == 80 %} selected {% endif %}>80 HORAS</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                            <label class="labelForm">
+                                <strong class="strongLabelForm">COMPETENCIAS</strong>
+                                <textarea class="inputForm textAreaPadrao mandatory" name="competencias" maxlength="1000">{{disciplina.competencias}}</textarea>
+                            </label>
+                        </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">HABILIDADES</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="habilidades" maxlength="1000">{{disciplina.habilidades}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                            <label class="labelForm">
+                                <strong class="strongLabelForm">EMENTA</strong>
+                                <textarea class="inputForm textAreaPadrao mandatory" name="ementa" maxlength="1000">{{disciplina.ementa}}</textarea>
+                            </label>
+                        </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CONTEUDO PROGRAMÁTICO</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="conteudoprogramatico" maxlength="1000">{{disciplina.conteudoprogramatico}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">BIBLIOGRAFICA BASICA</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="bibliografiabasica" maxlength="1000">{{disciplina.bibliografiabasica}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">BIBLIOGRAFIA COMPLEMENTAR</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="bibliografiacomplementar" maxlength="1000">{{disciplina.bibliografiacomplementar}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">PERCENTUAL PRÁTICO</strong>
+                            <input class="inputForm mandatory" type="number" min="0" max="100" name="percentualpratico" value="{{disciplina.percentualpratico}}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">PERCENTUAL TEÓRICO</strong>
+                            <input class="inputForm mandatory" type="number" min="0" max="100"  name="percentualteorico" value="{{disciplina.percentualteorico}}">
+                        </label>
+                    </div>
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation();">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+{% endblock %}

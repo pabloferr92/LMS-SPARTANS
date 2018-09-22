@@ -1,0 +1,52 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE ATIVIDADES</h1>
+                </div>
+                <div>
+                    <a class="buttonInsert" href="{% url "inseriratividade" %}">+</a>
+                </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        NOME DA ATIVIDADE
+                                    </th>
+                                    <th>
+                                        ALTERAR
+                                    </th>
+                                    <th>
+                                        REMOVER
+                                    </th>
+                                    <th>
+                                        VINCULAR
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for atividade in atividades %}
+                                    <tr>
+                                        <td>
+                                            {{ atividade.titulo }}
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'alteraratividade' atividade.idatividade %}">ALTERAR</a>
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'deletaratividade' atividade.idatividade %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url 'inseriratividadevinculada' atividade.idatividade %}">VINCULAR</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                  </ul>
+                </div>
+            </div>
+        </main>
+{% endblock %}

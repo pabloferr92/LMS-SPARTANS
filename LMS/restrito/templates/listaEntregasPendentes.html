@@ -1,0 +1,31 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE ENTREGAS PENDENTES - {{request.sessao.usuario.nome}}</h1>
+                </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                       ATIVIDADES PENDENTES
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for atividade in avs %}
+                                    <tr>
+                                        <td>
+                                            <a class="myButton" href="{% url 'inserirentrega' atividade.idatividadevinculada %}">{{ atividade.rotulo }} em {{atividade.iddisciplinaofertada.iddisciplina.nome}}/{{atividade.iddisciplinaofertada.idcurso.nome}}</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                  </ul>
+                </div>
+            </div>
+        </main>
+{% endblock %}

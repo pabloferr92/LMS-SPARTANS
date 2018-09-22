@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ANALISE E DESENVOLVIMENTO </title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href="layout.css" />
+		<script src="script.js" defer></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        h1 {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body id="novocurso">
+    <header>
+        <a href="index.html"><img alt="logo da impacta" src="img/logo.png"></a>
+        <div id="containerMenu">
+            <nav>
+                <a href="cursos.html">CURSOS</a>
+                <a href="index.html #noticias">NOTÍCIAS</a>
+                <a href="index.html #depoimentos">DEPOIMENTOS</a>
+                <a href="index.html #premios">PRÊMIOS</a>
+            </nav>
+            <a id="buttonLogin" href="login.html">LOGIN</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 id='form1h1'>Cadastro de Novo Aluno</h1>
+          <div class="containers" id="nov">
+                <form name="frmcpf" id='formulario' method="post">
+                  <fieldset>
+                      <div class="containerInputForm">
+                        <label for="login" class="labelForm">Login</label>:
+                        <input type="text" name="Login" id="login" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="nome" class="labelForm">Nome Completo</label>:<br>
+                        <input type="text" name="Nome Completo" id="nome" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="email" class="labelForm">Email</label>:<br>
+                        <input type="email" name="Email" id="email" placeholder="email@email.com" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="celular" class="labelForm">Celular</label>:<br>
+                        <input type="tel" name="Celular" id="celular" class="inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="nascimento" class="labelForm">Nascimento</label>:<br>
+                        <input type="date" name="Nascimento" id="nascimento" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="cpf" class="labelForm">CPF</label>:<br>
+                        <input type="text" name="CPF" id="cpf" maxlength="11" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="senha" class="labelForm">Senha</label>:<br>
+                        <input type="password" name="Senha" id="senha" class="obrigatorio inputs"><br>
+                      </div>
+
+                      <div class="containerInputForm">
+                        <label for="confirma_senha" class="labelForm">Confirmação de Senha</label>:<br>
+                        <input type="password" name="Confirmação de Senha" id="confirma_senha" class="obrigatorio inputs"><br>
+                      </div>
+
+                        <br/><br/>
+                      <div class="btnNovoAluno">
+                        <input type="submit" value="Enviar" onclick="return validateForm(event)">
+                        <input type="reset" value="Limpar">
+                      </div>
+                  </fieldset>
+                </form>
+            </div>
+    </main>
+
+
+    <footer>
+        <h1>Faculdade Impacta Tecnologia</h1>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+	    <main>
+
+               <table border="1">
+                  <tr>
+                     <td><B>DISCIPLINA</B></td>
+                     <td><B>Tecnologias Web</B></td>
+                  </tr>
+                  <tr>
+                     <td><B>SEMESTRE</B></td>
+                     <td><B>1º 2018</B></td>
+                  </tr>
+                  <tr>
+                     <td><B>TURMA</B></td>
+                     <td><B>2B</B></td>
+                  </tr>
+               </table>
+			   <h1>ANALISE DESENVOLVIMENTO DE SISTEMAS</h1>
+		<div class = "containers" id="matricula">
+	<form name="form" method="post" onsubmit="validateForm()">
+
+	    	<p>RA Nome Aluno 1
+			<label>
+				<input type="radio" name="aluno1" value="Aprovado" class="aprovado"> Aprovado
+			</label>
+			<label>
+					<input type="radio" name="aluno1" value="Cancelado" class="cancelado"> Cancelado
+			</label></p>
+			<p>RA Nome Aluno 1
+			<label>
+				<input type="radio" name="aluno1" value="Aprovado" class="aprovado"> Aprovado
+			</label>
+			<label>
+					<input type="radio" name="aluno1" value="Cancelado" class="cancelado"> Cancelado
+			</label>
+			</p>
+			<p>RA Nome Aluno 1
+			<label>
+				<input type="radio" name="aluno1" value="Aprovado" class="aprovado"> Aprovado
+			</label>
+			<label>
+					<input type="radio" name="aluno1" value="Cancelado" class="cancelado"> Cancelado
+			</label>
+		    </p>
+
+		</fieldset>
+		<input type="submit" value="Submit">
+		</form>
+	</div>
+</main>
+{% endblock %}

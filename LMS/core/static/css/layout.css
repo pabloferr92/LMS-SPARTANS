@@ -1,0 +1,729 @@
+/*CSS do Header*/
+body {
+  margin: 0;
+  font-family: "Source Sans Pro";
+  background-color: black;
+  color: white;
+}
+header {
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: black;
+  min-height: 4em;
+  padding-top: 0.6em;
+}
+footer {
+  background-color: black;
+  width: 100%;
+  margin-top: 4em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  color: white;
+  text-align: center;
+}
+header img {
+  width: 11.3em;
+}
+#containerMenu {
+  float: right;
+}
+#containerMenu nav {
+  display: inline-block;
+  margin-top: 1em;
+  width: 30em;
+}
+#containerMenu nav a {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+#buttonLogin {
+  color: white;
+  background-color: #116fff;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border: 1px solid #116fff;
+  border-radius: 20px;
+  text-decoration: none;
+}
+/*CSS do Main*/
+.main {
+  background-image: url("../img/background.png");
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+}
+.tituloMain {
+  position: absolute;
+  width: 100%;
+  font-size: 6em;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2em;
+}
+.containers {
+  padding-right: 3%;
+  padding-left: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.titulosContainer {
+  text-align: center;
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+/*CSS das Notícias*/
+.card {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.card ul {
+  text-align: left;
+  margin-right: 0.5em;
+}
+.card a {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+.imgNoticia {
+  width: 100%;
+  max-height: 200px;
+  min-height: 200px;
+  border-top-left-radius: 7px;
+}
+.conteudoNoticia {
+  border: 2px solid #3a62fc;
+  border-top: none;
+  margin-top: -14px;
+  padding-top: 15px;
+  border-bottom-right-radius: 15px;
+}
+.titulocard {
+  color: white;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  margin-left: 0.4em;
+  text-align: center;
+}
+.textocard {
+  color: gray;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  text-align: justify;
+}
+#imgTopo {
+  width: 100%;
+}
+/*CSS das Depoimentos*/
+.depoimento {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 30%;
+}
+.tituloDepoimento {
+  color: white;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #116fff;
+}
+.textoDepoimento {
+  color: gray;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  text-align: justify;
+}
+.assinaturaDepoimento {
+  font-style: italic;
+  font-size: 0.9em;
+  float: right;
+  color: gray;
+}
+/*CSS dos Premios*/
+.premio {
+  width: 22%;
+  text-align: center;
+}
+.tituloPremio {
+  color: white;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #116fff;
+}
+.textoPremio {
+  color: gray;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  text-align: center;
+}
+/* DISCPLINAS DO CURSO */
+
+/* CURSOS */
+.imgCursos {
+  width: 100%;
+  max-height: 200px;
+  min-height: 200px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.cardCurso {
+  width: 25%;
+}
+
+#cursos .card {
+  opacity: 0.7;
+  margin-bottom: 2em;
+}
+
+#cursos .card:hover {
+  opacity: 1;
+}
+
+#cursos .card a {
+  color: white;
+  font-weight: bolder;
+  width: inherit;
+  font-size: 1.4em;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+  margin-left: -1%;
+  height: inherit;
+  margin-top: 5%;
+  text-shadow: 2px 2px black;
+}
+/* DETALHJES DO CURSO */
+.mainDetalhesCurso {
+  background-image: url("../img/ads.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("../img/ads.png");
+}
+#containerDetalhesCurso {
+  margin-right: 2%;
+  margin-left: 2%;
+}
+#tituloCurso {
+  text-align: center;
+}
+
+.nomeCurso {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.textoDetalhesCurso {
+  font-style: italic;
+  font-size: 1em;
+  color: #fafafa;
+  text-align: justify;
+  line-height: 2em;
+}
+
+#containerPrincipalDetalhes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#containerPrincipalDetalhes section {
+  width: 45%;
+}
+
+#sobreOCurso,
+#tituloInformacoes {
+  text-align: center;
+}
+
+.containerInformacoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  border-radius: 50px;
+  margin-top: 1em;
+}
+
+.labelInformacoesCurso {
+  margin: 0;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.informacoesCurso {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#informacaoEsquerda {
+  text-align: center;
+}
+
+#duracaoDoCurso,
+#semestres {
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 200;
+  font-style: italic;
+}
+
+#valorDuracaoCurso {
+  font-size: 5em;
+  margin: 0;
+  font-style: italic;
+}
+
+#tecnologo {
+  font-size: 5em;
+  margin: 0;
+  margin-top: 0.2em;
+  font-style: italic;
+}
+
+#semestres {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+#matrizCurricular {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#matrizCurricular a {
+  color: white;
+  text-decoration: none;
+}
+
+#matrizCurricular td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+}
+
+.matrizSemestre {
+  text-align: left !important;
+  width: 6em;
+}
+.materiaCurso {
+  margin: 0;
+  margin-top: 1em;
+  font-size: 1em;
+  font-style: italic;
+  text-shadow: 1px 1px black;
+}
+.cargaHorariaCurso {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #3e67fd;
+  text-shadow: 1px 1px black;
+}
+
+/* CSS LOGIN */
+.containerInput {
+  margin-bottom: 1em;
+}
+.inputLogin {
+  height: 48px;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.37);
+  color: white;
+  font-size: 20px;
+}
+.label {
+  width: 10em;
+  display: inline-block;
+}
+#bodyPrincipal {
+  background-image: url("../img/stars-bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+#formulario fieldset {
+  width: 22em;
+  border: none;
+}
+#areaLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+#logoLogin {
+  width: 15em;
+  margin-bottom: 5em;
+}
+#rememberLabel {
+  float: right;
+}
+#divSubmit {
+  margin-top: 6em;
+  width: 100%;
+  text-align: center;
+}
+.btn {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  background: #2c82c9;
+  border: none;
+  color: white;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+/*CSS DO FORMULARIOS*/
+
+.inputForm {
+  height: 48px;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.37);
+  color: white;
+  font-size: 20px;
+}
+
+.labelForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerInputForm {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.strongLabelForm {
+  width: 15em;
+  display: inline-block;
+}
+
+select option {
+  background-color: gray;
+  color: white;
+}
+
+.textAreaPadrao {
+  width: 450px;
+  height: 250px;
+  resize: none;
+}
+
+#formularioCurso fieldset {
+  border: none;
+}
+
+#novocurso.containers {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#divSubmitCurso {
+  margin-top: 3em;
+  width: 100%;
+  text-align: center;
+}
+
+#formularioCurso h1 {
+  text-align: center;
+  background-color: black;
+}
+/* CSS DA DISCIPLINA */
+#mainDisciplina {
+  background-image: url("../img/neural.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("../img/neural.jpeg");
+  padding-bottom: 3em;
+}
+
+.disciplina {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 20%;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 -10px white;
+  }
+  40% {
+    text-shadow: 0 0 20px white;
+  }
+  60% {
+    text-shadow: 0 0 20px white;
+  }
+  100% {
+    text-shadow: 0 0 -10px white;
+  }
+}
+
+@keyframes glowing2 {
+  0% {
+    text-shadow: 0 0 -10px #4b4b4b;
+  }
+  40% {
+    text-shadow: 0 0 20px #4b4b4b;
+  }
+  60% {
+    text-shadow: 0 0 20px #4b4b4b;
+  }
+  100% {
+    text-shadow: 0 0 -10px #4b4b4b;
+  }
+}
+
+#textoDisciplina1 {
+  animation: glowing 1600ms infinite;
+}
+
+#textoDisciplina2 {
+  animation: glowing 2165ms infinite;
+}
+
+#textoDisciplina3 {
+  animation: glowing 3120ms infinite;
+}
+
+#textoDisciplina4 {
+  animation: glowing 3905ms infinite;
+}
+
+#tituloDisciplina1 {
+  animation: glowing2 3200ms infinite;
+}
+
+#tituloDisciplina2 {
+  animation: glowing2 1205ms infinite;
+}
+
+#tituloDisciplina3 {
+  animation: glowing2 2350ms infinite;
+}
+
+#tituloDisciplina4 {
+  animation: glowing2 1903ms infinite;
+}
+
+.tituloDisciplina {
+  color: #3e67fd;
+}
+
+.textoDisciplina {
+  text-align: justify;
+}
+/* CSS DO PAINEL ADMIN */
+.btnPainelAdmin {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#bodyPainelAdmin {
+  background-image: url("../img/stars-bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#containerPainelAdmin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#containerPainelAdmin a {
+  text-decoration: none;
+  color: white;
+}
+
+#areaPainelAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+
+/*css formulario novo aluno*/
+
+h1#formh1 {
+  text-align: center;
+  margin-left: 10px;
+}
+
+#novoaluno.containers {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+form #novofiel {
+  margin-left: 540px;
+}
+
+.buttonInsert {
+  background-color: #116fff;
+  -moz-border-radius: 42px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 28px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 10px #283966;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.myButton {
+  background-color: transparent;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  border: 1px solid #116fff;
+  display: inline-block;
+  cursor: pointer;
+  color: #116fff;
+  font-family: Arial;
+  font-size: 12px;
+  padding: 4px 29px;
+  text-decoration: none;
+  text-shadow: 0px -13px 50px #116fff;
+}
+.myButton:hover {
+  background-color: #116fff;
+  color: #ffffff;
+  border: 1px solid white;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.table {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  border-bottom-right-radius: 150px;
+  border-top-left-radius: 150px;
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tituloCrud {
+  text-align: center;
+}
+
+.tabelaMatricula {
+  width: 100%;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tabelaMatricula td {
+  text-align: center;
+}
+
+.imgAluno {
+  width: 450px;
+}
+.buttontest{
+    background-color:transparent;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:22px;
+	border:1px solid #116FFF;
+	display:inline-block;
+	cursor:pointer;
+	color:#116FFF;
+	font-family:Arial;
+	font-size:11px;
+	padding:15px 20px;
+	text-decoration:none;
+    text-shadow:0px -13px 50px #116FFF;
+
+}
+.buttontest {
+    background-color:#116FFF;
+    color: #FFFFFF;
+    border: 1px solid black ;
+
+}
+.buttontest{
+	position:relative;
+	top:1px;
+
+}
+
+#containerMenuRestrito {
+  float: right;
+}
+#containerMenuRestrito nav {
+  display: inline-block;
+  margin-top: 1em;
+  width: 55em;
+}
+#containerMenuRestrito nav a {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: white;
+  text-decoration: none;
+}

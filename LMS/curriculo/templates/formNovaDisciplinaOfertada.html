@@ -1,0 +1,103 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if disciplinaofertada.iddisciplinaofertada %}
+                    	<h1>ALTERAR DISCIPLINA OFERTADA</h1>
+                    {% else %}
+                    	<h1>OFERTAR DISCIPLINA</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DATA INICIO MATRICULA</strong>
+                            <input class="inputForm mandatory" type="date" name="dtiniciomatricula" value="{{disciplinaofertada.dtiniciomatricula|date:'Y-m-d'}}" />
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DATA FIM MATRICULA</strong>
+                            <input class="inputForm mandatory" type="date" name="dtfimmatricula" value="{{disciplinaofertada.dtfimmatricula|date:'Y-m-d'}}" />
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DISCIPLINA</strong>
+                            <input class="inputForm" type='text' value="{{disciplina.nome}}" readonly="readonly" />
+                        </label>
+                    </div>
+					<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CURSO</strong>
+                            <select name='curso' class="inputForm mandatory" >
+                                <option value="">SELECIONE</option>
+								{% for curso in cursos %}
+									<option value="{{curso.idcurso}}" {% if curso.idcurso == disciplinaofertada.idcurso.idcurso %} selected {% endif %}>{{curso.nome}}</option>
+								{% endfor %}
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">ANO</strong>
+                            <input class="inputForm mandatory" type="number" min='2018' max='9999' name="ano" value="{{disciplinaofertada.ano}}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">SEMESTRE</strong>
+                            <input class="inputForm mandatory" value='{{disciplinaofertada.semestre}}' type="number" min='1' max='2' name='semestre'>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">TURMA</strong>
+                            <input class="inputForm mandatory" type="text" name='turma' value='{{disciplinaofertada.turma}}' maxlength="6" />
+                        </label>
+                    </div>
+					<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">PROFESSOR</strong>
+                            <select name='professor' class="inputForm mandatory" >
+                                <option value="">SELECIONE</option>
+								{% for professor in professores %}
+									<option value="{{professor.idprofessor}}" {% if professor.idprofessor == disciplinaofertada.idprofessor.idprofessor %} selected {% endif %}>{{professor.nome}}</option>
+								{% endfor %}
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">METODOLOGIA</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="metodologia" maxlength="1000">{{disciplinaofertada.metodologia}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">RECURSOS</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="recursos" maxlength="1000">{{disciplinaofertada.recursos}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CRITÉRIOS DE AVALIAÇÃO</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="criterios" maxlength="1000">{{disciplinaofertada.criterioavaliacao}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">PLANO DE AULAS</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="planodeaulas" maxlength="1000">{{disciplinaofertada.planodeaulas}}</textarea>
+                        </label>
+                    </div>
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation();">
+                    </div>
+                </form>
+            </div>
+		</main>
+	</body>
+{% endblock %}

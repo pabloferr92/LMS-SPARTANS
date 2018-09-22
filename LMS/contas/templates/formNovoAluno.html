@@ -1,0 +1,63 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+    <body id="bodyPrincipal">
+        <main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" enctype="multipart/form-data">
+                    {% if professor.idaluno %}
+                        <h1>ALTERAR ALUNO</h1>
+                    {% else %}
+                       <h1>INSERIR ALUNO</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">LOGON</strong>
+                            <input class="inputForm mandatory" type="text" name="logon" placeholder="logon" maxlength="20" value ="{{ aluno.logon }}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">SENHA</strong>
+                            <input class="inputForm mandatory" type="password" name="senha" placeholder="senha (no minimo 8 caracteres)" maxlength="20" >
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">NOME</strong>
+                            <input class="inputForm mandatory" type="text" name="nome" placeholder="seu nome" maxlength="" maxlength="30" value = "{{ aluno.nome }}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">EMAIL</strong>
+                            <input class="inputForm mandatory" type="email" name="email" placeholder="email@exemplo.com" maxlength="40" value = "{{ aluno.email }}">
+                        </label>
+                    {% if mensagem %}
+                        <p style= "color:{{cor}}"> {{ mensagem }} </style> </p>
+                    {% endif %}
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CELULAR</strong>
+                            <input class="inputForm mandatory" type="text" name="celular" placeholder="999999999" maxlength="9" value = "{{ aluno.celular }}">
+                        </label>
+                    </div>
+                    {% if aluno.idaluno %}
+                        <img class="imgAluno" src="data:image/png;base64, {{ aluno.foto }}">
+                    {% endif %}
+    				        <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">FOTO</strong>
+                            <input id="fileUpload" class="inputForm mandatory" type="file" name="foto" placeholder="Sua Foto" maxlength="9" value = "{{ aluno.logon }}">
+                        </label>
+                    </div>
+                    <div id="divSubmitAluno">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation(), validatePhoto();">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+{% endblock %}

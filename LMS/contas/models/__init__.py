@@ -1,0 +1,1 @@
+from restrito.models.solicitacaoMatricula import Solicitacaomatricula

@@ -1,0 +1,46 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE SOLICITAÇÃO DE MATRICULA</h1>
+                </div>
+                <div>
+                    <a class="buttonInsert" href="{% url "inserirsolicitacao" %}">+</a>
+                </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        SOLICITAÇÃO DE MATRICULA
+                                    </th>
+                                    <th>
+                                        ALTERAR
+                                    </th>
+                                    <th>
+                                        STATUS
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for so in solicitacoes %}
+                                    <tr>
+                                        <td>
+                                            {{ so.idaluno.nome }}
+                                        </td>
+                                        <td>
+                                            <a class="myButton" href="{% url "aprovarsolicitacao" so.idsolicitacaomatricula %}">APROVAR</a>
+                                        </td>
+                                        <td>
+                                            <a>{{so.status}}</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                  </ul>
+                </div>
+            </div>
+        </main>
+{% endblock %}

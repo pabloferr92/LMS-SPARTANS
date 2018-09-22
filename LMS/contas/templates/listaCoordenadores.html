@@ -1,0 +1,48 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE COORDENADORES</h1>
+                </div>
+
+                <div>
+                    <a class="buttonInsert" href="{% url "inserircoordenador" %}">+</a>
+                </div>
+
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    NOME DOS COORDENADORES
+                                </th>
+                                <th>
+                                    ALTERAR
+                                </th>
+                                <th>
+                                    REMOVER
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ coordenador.nome }}
+                            {% for coordenador in coordenadores %}
+                                <tr>
+                                    <td>
+                                        {{ coordenador.nome }}
+                                    </td>
+                                    <td>
+                                        <a class="myButton" href="{% url 'alterarcoordenador' coordenador.idcoordenador %}">ALTERAR</a>
+                                    </td>
+                                    <td>
+                                        <a class="myButton" href="{% url 'deletarcoordenador' coordenador.idcoordenador %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "baseforms.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if not mensagem %}
+						<h1>NOVA MENSAGEM</h1>
+                	{% else %}
+						{% if mensagem.origem == request.sessao.usuario.profile %}
+							<h1>ALTERAR MENSAGEM</h1>
+						{% else %}
+							<h1>RESPONDER MENSAGEM</h1>
+						{% endif %}
+                    {% endif %}
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">ASSUNTO</strong>
+                            <input class="inputForm mandatory" type="text" name="assunto" value="{{mensagem.assunto}}" {% if mensagem.origem == 'A' and request.sessao.usuario.profile != 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile != 'P' or mensagem.status == "RESPONDIDO" %} readonly="readonly" {% endif %}>
+                        </label>
+                    </div>
+                    {% if request.sessao.usuario.profile == 'A' %}
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PARA O PROFESSOR: </strong>
+	                            <select name='professor' class="inputForm mandatory" {% if mensagem.origem == 'A' and request.sessao.usuario.profile != 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile != 'P' or mensagem.idmensagem %} disabled="disabled" {% endif %}>
+	                                <option value="">SELECIONE</option>
+									{% for professor in professores %}
+										<option value="{{professor.idprofessor}}" {% if professor.idprofessor == mensagem.idprofessor.idprofessor %} selected {% endif %}>{{professor.nome}}</option>
+									{% endfor %}
+	                            </select>
+	                        </label>
+	                    </div>
+                    {% else %}
+						<div class="containerInputForm">
+							<label class="labelForm">
+								<strong class="strongLabelForm">PARA O ALUNO: </strong>
+								<select name='aluno' class="inputForm mandatory" {% if mensagem.origem == 'A' and request.sessao.usuario.profile != 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile != 'P' or mensagem.status == "RESPONDIDO" %} disabled="disabled" {% endif %}>
+									<option value="">SELECIONE</option>
+									{% for aluno in alunos %}
+										<option value="{{aluno.idaluno}}" {% if aluno.idaluno == mensagem.idaluno.idaluno %} selected {% endif %}>{{aluno.nome}}</option>
+									{% endfor %}
+								</select>
+							</label>
+						</div>
+                    {% endif %}
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">REFERENCIA</strong>
+                            <input class="inputForm mandatory" type="text" name="referencia" value="{{mensagem.referencia}}" {% if mensagem.origem == 'A' and request.sessao.usuario.profile != 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile != 'P' or mensagem.status == "RESPONDIDO"  %} readonly="readonly" {% endif %} >
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CONTEUDO</strong>
+                            <textarea class="inputForm textAreaPadrao mandatory" name="conteudo" maxlength="500" value="" {% if mensagem.origem == 'A' and request.sessao.usuario.profile != 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile != 'P' or mensagem.status == "RESPONDIDO"  %} readonly="readonly" {% endif %} >{{mensagem.conteudo}}</textarea>
+                            </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">RESPOSTA</strong>
+                            <textarea class="inputForm textAreaPadrao " name="resposta" maxlength="500" {% if mensagem.origem == 'A' and request.sessao.usuario.profile == 'A' or mensagem.origem == 'P' and request.sessao.usuario.profile == 'P' or not mensagem.idmensagem  %} readonly="readonly" {% endif %}>{{mensagem.resposta}}</textarea>
+                        </label>
+                    </div>
+
+					{% if mensagem.status != "RESPONDIDO" %}
+	                    <div id="divSubmitCurso">
+	                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation();">
+	                    </div>
+					{% endif %}
+                </form>
+            </div>
+		</main>
+	</body>
+{% endblock %}

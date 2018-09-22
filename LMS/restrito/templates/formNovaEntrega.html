@@ -1,0 +1,61 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+	<body>
+		<main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if entrega.identrega %}
+                    	<h1>ALTERAR ENTREGA</h1>
+                    {% else %}
+                    	<h1>ADICIONAR ENTREGA</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">TITULO</strong>
+                            <input class="inputForm mandatory" type="text" name="titulo" value="{{entrega.titulo}}" {%if request.sessao.usuario.profile != 'A' %} readonly="readonly" {% endif %} />
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">RESPOSTA</strong>
+							<textarea class="inputForm textAreaPadrao mandatory" name="resposta" maxlength="1000" {%if request.sessao.usuario.profile != 'A' %} readonly="readonly" {% endif %}>{{entrega.resposta}}</textarea>
+                        </label>
+                    </div>
+                    {% if request.sessao.usuario.profile == 'P'  %}
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">NOTA</strong>
+                            <input class="inputForm" min='1' max='10' step='0.01' type="number" name="nota" value="{{entrega.nota}}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">OBSERVAÇÕES</strong>
+							<textarea class="inputForm textAreaPadrao" name="obs" required="required" maxlength="1000">{{entrega.obs}}</textarea>
+                        </label>
+                    </div>
+                    {% endif %}
+                    {% if request.sessao.usuario.profile == "A" and entrega.status != "ENTREGUE" %}
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">NOTA</strong>
+                            <input class="inputForm" min='1' max = '10' type="text" name="nota" value="{{entrega.nota}}" readonly>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">Observações</strong>
+							<textarea class="inputForm textAreaPadrao" name="obs" required="required" maxlength="1000" readonly>{{entrega.obs}}</textarea>
+                        </label>
+                    </div>
+                    {% endif %}
+
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation();">
+                    </div>
+                </form>
+            </div>
+		</main>
+	</body>
+{% endblock %}

@@ -1,0 +1,140 @@
+<html lang="pt-br">
+	<head>
+		<title>Painel Admin - Nova Disciplina</title>
+		<meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' href="layout.css"/>
+		<link rel="stylesheet" href ="normalize.css">
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><img alt="logo da impacta" src="img/logo.png"></a>
+			<div id="containerMenu">
+				<nav>
+					<a href="cursos.html">CURSOS</a>
+					<a href="index.html#noticias">NOTÍCIAS</a>
+					<a href="index.html#depoimentos">DEPOIMENTOS</a>
+					<a href="index.html#premios">PRÊMIOS</a>
+				</nav>
+				<a id="buttonLogin" href="login.html">LOGIN</a>
+			</div>
+		</header>
+
+		<main>
+			<div class="containers" id="novocurso">
+				<form id="formularioCurso" autocomplete="off" method="POST" action="painel_admin.html">
+					<h1>ADICIONAR NOVA DISCIPLINA</h1>
+
+				    <fieldset>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">NOME DA DISCIPLINA</strong>
+	                            <input class="inputForm" type="text" name="nome" placeholder="DEVOPS" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">DATA</strong>
+	                            <input class="inputForm" type="text" name="data" placeholder="" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">STATUS</strong>
+	                            <input class="inputForm" type="text" name="STATUS" placeholder="" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">Plano de Ensino</strong>
+	                            <input class="inputForm" type="text" name="Plano" placeholder="DEVOPS" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">CARGA HORÁRIA</strong>
+	                            <input class="inputForm" type="number" name="carga_horaria" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">COMPETÊNCIAS</strong>
+	                            <textarea class="inputForm textAreaCurso" name="competencias"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">Habilidades</strong>
+	                            <textarea class="inputForm textAreaCurso" name="Habilidadess"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">Ementa</strong>
+	                            <textarea class="inputForm textAreaCurso" name="ementa"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">CONTEUDO PROGRAMATICO</strong>
+	                            <textarea class="inputForm textAreaCurso" name="conteudo"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">BIBLIOGRAFIA BASICA</strong>
+	                            <textarea class="inputForm textAreaCurso" name="bibliografiabasica"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">BIBLIOGRAFIA COMPLEMENTAR</strong>
+	                            <textarea class="inputForm textAreaCurso" name="bibliografiacomplementar"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">PERCENTUAL PRATICO</strong>
+	                            <textarea class="inputForm textAreaCurso" name="pratico"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">TEORICO</strong>
+	                            <textarea class="inputForm textAreaCurso" name="TEORICO"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">COORDENADOR</strong>
+	                            <textarea class="inputForm textAreaCurso" name="COORDENADOR"></textarea>
+	                        </label>
+						</div>
+                        <div id="divSubmitCurso">
+                            <input type="submit" class="btn" value="SALVAR">
+                        </div>
+                    </fieldset>
+                </form>
+			</div>
+		</main>
+		<footer>
+			<h1>Faculdade Impacta Tecnologia</h1>
+		</footer>
+	</body>
+</html>

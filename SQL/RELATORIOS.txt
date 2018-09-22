@@ -1,0 +1,50 @@
+
+
+ Formato da entrega Textual ( não utilizar imagens para entrega do relatório )
+Descrição das mudanças e alterações realizadas no modelo, ou seja, o que vocês alteraram, incluíram, excluíram do modelo original.
+Descreva as mudanças realizadas no projeto que afetam as entregas anteriores, ou seja, relate aqui tudo o que mudou no projeto ( ex: um campo era INT e virou VARCHAR, uma tabela ganhou uma coluna adicional, etc ).
+Descreva as tecnologias utilizadas ( tipo do banco: SQL Server, Mysql, etc ), ferramenta utilizada para fazer o diagrama visual, etc.
+
+Tecnologias utilizadas
+Banco de dados: MSSQL Server 2014
+Ferramenta utilizada: Microsoft SQL Server Management Studio 2014
+
+Mudanças realizadas:
+Realizadas alterações em colunas do tipo Varchar para corresponderem ao tamanho das inserções que seriam realizadas em suas respectivas tabelas.
+
+Realizada alteração na tabela "mensagem" para não haver duplicidades de chave estrangeiras no banco.
+
+
+Realizada alteração na tabela "entrega" para não haver duplicidades de chave estrangeiras no banco.
+
+Realizada inserção de cursos na tabela de "cursos"
+
+Realizada inserção de coordenador na tabela de "coordenador"
+
+Realizado cadastro de alunos na tabela "alunos"
+
+Realizada criação de disciplinas na tabela "disciplinas"
+
+Realizada criação de disciplina ofertada na tabela "disciplinaOfertada"
+
+Realizada atualização de professor nas disciplinas ofertadas em "disciplinaOfertada"
+
+Realizada atribuição de data inicio e data fim para as disicplinas ofertadas em "disciplinaOfertada"
+Realizada inserção de 3 alunos em cada uma das disciplinas ofertadas na tabela "solicitacaoMatricula"
+
+
+Realizada alteração na tabela de "solicitacaoMatricula" aprovando ou cancelado solicitações
+
+
+
+Realizada criação de atividades na tabela de "atividades"
+
+Realizada criação de vinculos dessas atividades em "atividadeVinculada"
+
+Realizada entrega de duas atividades na tabela "entrega"
+
+Realizada avaliação de uma das atividades da tabela "entrega" atribuindo uma nota
+
+Realizada criação de uma dúvida do aluno na tabela "mensagem"
+
+Registrada resposta do professor na tabela "mensagem" atualizando data e hora

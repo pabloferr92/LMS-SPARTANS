@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <main class="mainDetalhesCurso">
+            <div id="containerDetalhesCurso">
+                <h1 id="tituloCurso">{{ valor1 }}</h1>
+
+                <div id="containerPrincipalDetalhes">
+                    <section>
+                        <h2 id="sobreOCurso">{{ valor2 }}</h2>
+                        <p class="textoDetalhesCurso">{{ valorDetalheCurso1 }}</p>
+                        <p class="textoDetalhesCurso">{{ valorDetalheCurso2 }}</p>
+                    </section>
+
+                    <section>
+                        <h2 id="tituloInformacoes">{{ valor3 | upper}}</h2>
+                        <div class="containerInformacoes">
+                            <div id="informacaoEsquerda">
+                                <p id="duracaoDoCurso">{{ valor4 }}</p>
+                                <p id="valorDuracaoCurso">{{ valor5 }}</p>
+                                <p id="semestres">{{ valor6 }}</p>
+                            </div>
+                            <div>
+                                <h3 id="tecnologo">{{ valor7 }}</h3>
+                            </div>
+                        </div>
+                        <div class="containerInformacoes">
+                            <div>
+                                <h4 class="labelInformacoesCurso">{{ valor8 }}</h4>
+                                <p class="informacoesCurso">{{ valor9 }}</p>
+                                <h4 class="labelInformacoesCurso">{{ valor10 }}</h4>
+                                <p class="informacoesCurso">{{ valor11 }}</p>
+                                <h4 class="labelInformacoesCurso">{{ valor12 }}</h4>
+                                <p class="informacoesCurso">{{ valor13 }}</p>
+                            </div>
+                            <div>
+                                <p class="labelInformacoesCurso">{{ valor14 }}</p>
+                                <p class="informacoesCurso">{{ valor15 }}</p>
+                                <p class="labelInformacoesCurso">{{ valor16 }}</p>
+                                <p class="informacoesCurso">{{ valor17 }}</p>
+                            </div>
+                            <div>
+                                <p class="labelInformacoesCurso">{{ valor18 }}</p>
+                                <p class="informacoesCurso">{{ valor19 }}</p>
+                                <p class="labelInformacoesCurso">{{ valor20 }}</p>
+                                <p class="informacoesCurso">{{ valor21 }}</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section>
+                    <div class="">
+                        <h2>{{ valor22 }}</h2>
+                        <table id="matrizCurricular">
+                            <tr>
+                                <td class="matrizSemestre">{{ valor23 }}</td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor24 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor25 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor26 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor27 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor28 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor29 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                            </tr>
+                            <tr>
+                                <td class="matrizSemestre">{{ valor30 }}</td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor31 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor32 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor33 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor34 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor35 }}</p><p class="cargaHorariaCurso">{{ valor52 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor36 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                            </tr>
+                            <tr>
+                                <td class="matrizSemestre">{{ valor37 }}</td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor38 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor39 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor40 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor41 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor42 }}</p><p class="cargaHorariaCurso">{{ valor52 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-tecweb' %}"><p class="materiaCurso">{{ valor43 }}</p><p class="cargaHorariaCurso">{{ valor53 }}</p></a></td>
+                            </tr>
+                            <tr>
+                                <td class="matrizSemestre">{{ valor44 }}</td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor45 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor46 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor47 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor48 }}</p><p class="cargaHorariaCurso">{{ valor51 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor49 }}</p><p class="cargaHorariaCurso">{{ valor53 }}</p></a></td>
+                                <td><a href="{% url 'detalhe-disciplina-bd' %}"><p class="materiaCurso">{{ valor50 }}</p><p class="cargaHorariaCurso">{{ valor52 }}</p></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+{% endblock %}

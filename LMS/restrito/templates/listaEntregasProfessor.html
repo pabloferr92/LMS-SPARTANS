@@ -1,0 +1,30 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE ATIVIDADES VINCULADAS</h1>
+                </div>
+                <div>
+                    <a href="{% url "inserirentrega" %}">INSERIR</a>
+                </div>
+                <div>
+                  <table>
+                    <tr>
+                          <td>ENTREGAS</td>
+                      </tr>
+                  </table>
+                  <ul>
+                      {% for entrega in entregas %}
+                      <li>
+                         {{ entrega.titulo }}
+                         <a href="{% url 'alterarentrega' entrega.identrega %}">ALTERAR</a>
+                         <a href="{% url 'deletarentrega' entrega.identrega %}" onclick="return confirm('Tem certeza que deseja excluir?')">REMOVER</a>
+                        </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+            </div>
+        </main>
+{% endblock %}

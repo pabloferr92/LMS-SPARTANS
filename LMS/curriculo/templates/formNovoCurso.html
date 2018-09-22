@@ -1,0 +1,42 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+			<div class="containers" id="novocurso">
+				<form id="formularioCurso" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if cursos.idcurso %}
+                    	<h1>ALTERAR CURSO</h1>
+                    {% else %}
+	                    <h1>ADICIONAR NOVO CURSO</h1>
+                    {% endif %}
+
+					<div class="containerInput">
+            <label>
+                <strong class="label">NOME DO CURSO</strong>
+                <input class="inputLogin mandatory" type="text" name="curso" value="{{curso.nome}}">
+            </label>
+					</div>
+
+					<div class="containerInputForm">
+              <label class="labelForm">
+                  <strong class="strongLabelForm">COORDENADOR</strong>
+                  <select name='coordenador' class="inputForm mandatory" >
+                      <option value="">SELECIONE</option>
+										{% for coordenador in coordenadores %}
+                                        
+											<option value="{{coordenador.idcoordenador}}" {% if coordenador.idcoordenador == curso.idcoordenador.idcoordenador %} selected {% endif %}>{{coordenador.nome}}</option>
+										{% endfor %}
+                  </select>
+              </label>
+          </div>
+
+  				<div id="divSubmit">
+              <input type="submit" class="btn" onclick="return formValidation();">
+          </div>
+
+			</form>
+    </div>
+	</main>
+</body>
+{% endblock %}

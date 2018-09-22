@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <h1 id='form1h1'>Cadastro de Novo Aluno</h1>
+        <div class="containers" id=''>
+
+            <form name="frmcpf" id='novofiel' method="post">
+                <fieldset>
+                    <label for="login">Login</label>:<br>
+                    <input type="text" name="login" id="login"><br>
+
+                    <label for="nome">Nome Completo</label>:<br>
+                    <input type="text" name="nome" id="nome"><br>
+
+                    <label for="email">Email</label>:<br>
+                    <input type="email" name="email" id="email" placeholder="email@email.com"><br>
+
+                    <label for="celular">Celular</label>:<br>
+                    <input type="tel" name="celular" id="celular"><br>
+
+                    <label for="nascimento">Nascimento</label>:<br>
+                    <input type="date" name="nascimento" id="nascimento" onblur="validarIdade()"><br>
+
+                    <label for="cpf">CPF</label>:<br>
+                    <input type="text" name="cpf" id="cpf" onblur="javascript: validarCPF(this.value);" maxlength="11"><br>
+
+                    <label for="senha">Senha</label>:<br>
+                    <input type="password" name="senha" id="senha" onblur="validarSenha()"><br>
+
+                    <label for="confirma_senha">Confirmação de Senha</label>:<br>
+                    <input type="password" name="confirma_senha" id="confirma_senha" onblur="senhasIguais(this)"><br>
+
+                    <br/><br/>
+
+                    <input type="submit" name="Submit">
+                    <input type="reset" value="Limpar">
+                </fieldset>
+
+            </form>
+        </div>
+
+    </main>
+
+{% endblock %}

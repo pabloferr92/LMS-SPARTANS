@@ -1,0 +1,40 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+    <body onload="checkboxes()">
+        <main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" enctype="multipart/form-data">
+                    {% if solicitacao.idsolicitacaomatricula %}
+                        <h1>ALTERAR SOLICITACAO DE MATRICULA</h1>
+                    {% else %}
+                        <h1>ADICIONAR NOVA SOLICITACAO DE MATRICULA</h1>
+                    {% endif %}
+
+                    <table class="tabelaMatricula">
+                        <thead>
+                            <tr>
+                                <th>SELECIONAR</th>
+                                <th>NOME DA DISCIPLINA</th>
+                                <th>NOME DO CURSO</th>
+                                <th>CARGA HORARIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for do in disciplinasofertadas  %}
+                                <tr>
+                                    <td><input  type="checkbox" name="matricula" value="{{do.iddisciplinaofertada}}" id="matricula_{{do.iddisciplinaofertada}}" {%if do.selected %} checked {% endif %}></td>
+                                    <td>{{do.iddisciplina.nome}}</td>
+                                    <td>{{do.idcurso.nome}}</td>
+                                    <td>{{do.iddisciplina.cargahoraria}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return checkboxes();">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">Bem-vindo {{request.sessao.usuario.nome}}</h1>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nome:</td><th>{{request.sessao.usuario.nome}}</th>
+                                </tr>
+                                <tr>
+                                <td>RA:</td>
+                                </tr>
+                                <tr>
+                                <td>Entregas:</tr>
+                                </tr>
+                                <tr>
+                                <td>Mensagens:</td>
+                                </tr>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+        </main>
+{% endblock %}

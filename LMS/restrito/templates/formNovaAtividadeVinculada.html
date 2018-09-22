@@ -1,0 +1,69 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if atividade.idatividadevinculada %}
+                    	<h1>ALTERAR ATIVIDADE VINCULADA</h1>
+                    {% else %}
+                    	<h1>ADICIONAR ATIVIDADE VINCULADA</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">ATIVIDADE</strong>
+                            <input class="inputForm" type="text" value="{{atividade.titulo}}" readonly="readonly" />
+                        </label>
+                    </div>
+										<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DISCIPLINA</strong>
+                            <select name='disciplinaofertada' class="inputForm mandatory">
+                                <option value="">SELECIONE</option>
+															{% for do in disciplinasofertadas %}
+	                            	<option value ='{{do.iddisciplinaofertada}}' {% if do.iddisciplinaofertada == atividadevinculada.iddisciplinaofertada.iddisciplinaofertada %} selected {% endif %}>{{do.iddisciplina.nome}} - em - {{do.idcurso.nome}}</option>
+	                            {% endfor %}
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">RÓTULO</strong>
+                            <input class="inputForm" type="text" name="rotulo" value="{{atividadevinculada.rotulo}}" maxlength="100" />
+                        </label>
+                    </div>
+										<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">STATUS</strong>
+                            <select name='estado' class="inputForm mandatory">
+                              <option value="">SELECIONE</option>
+															<option value='DISPONIBILIZADA' {% if atividadevinculada.estado == "DISPONIBILIZADA" %} selected {% endif %}>DISPONIBILIZADA</option>
+	                            <option value='ABERTA' {% if atividadevinculada.estado == "ABERTA" %} selected {% endif %}>ABERTA</option>
+	                            <option value='FECHADA' {% if atividadevinculada.estado == "FECHADA" %} selected {% endif %}>FECHADA</option>
+	                            <option value='ENCERRADA' {% if atividadevinculada.estado == "ENCERRADA" %} selected {% endif %}>ENCERRADA</option>
+	                            <option value='PRORROGADA' {% if atividadevinculada.estado == "PRORROGADA" %} selected {% endif %}>PRORROGADA</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DATA INICIO RESPOSTAS</strong>
+                            <input class="inputForm" type="date" name="dtiniciorespostas" value="{{atividadevinculada.dtiniciorespostas|date:'Y-m-d'}}">
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DATA FIM RESPOSTAS</strong>
+                            <input class="inputForm" type="date" name="dtfimrespostas" value="{{atividadevinculada.dtfimrespostas|date:'Y-m-d'}}">
+                        </label>
+                    </div>
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR" onclick="return formValidation();">
+                    </div>
+                </form>
+            </div>
+		</main>
+	</body>
+{% endblock %}

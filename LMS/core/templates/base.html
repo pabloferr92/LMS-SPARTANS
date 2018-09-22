@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <title>Faculdade Impacta</title>
+        <link rel="stylesheet" href ="{% static 'css/layout.css' %}" />
+        <link rel="stylesheet" href ="{% static 'css/normalize.css' %}" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="57x57" href = "{% static 'favicon/apple-icon-57x57.png' %}"/>
+        <link rel="apple-touch-icon" sizes="60x60" href = "{% static 'favicon/apple-icon-60x60.png' %}"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static '/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}"/>
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
+        <link rel ='shortcut icon' href="{%static 'favicon/favicon.ico' %}" />
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <header>
+            <a href="/"><img src="{% static 'img/logo.png' %}"/></a>
+            <div id="containerMenu">
+                <nav>
+                    <a href="{% url "cursos" %}">CURSOS</a>
+                    <a href="{% url "index" %}#noticias">NOTICIAS</a>
+                    <a href="{% url "index" %}#depoimentos">DEPOIMENTOS</a>
+                    <a href="{% url "index" %}#premios">PRÊMIOS</a>
+                    {% if request.sessao.usuario.profile == "A" %}
+                        <a href="{% url 'aluno' %}">AREA ONLINE</a>
+                    {% else %}
+                        {% if request.sessao.usuario.profile == "P" %}
+                            <a href="{% url 'professor' %}">AREA ONLINE</a>
+                        {% else %}
+                            {% if request.sessao.usuario.profile == "C" %}
+                                <a href="{% url 'coordenador' %}">AREA ONLINE</a>
+                            {% else %}
+                                {% if request.sessao.usuario.profile == "S" %}
+                                    <a href="{% url 'adminstrador' %}">AREA ONLINE</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </nav>
+                {% if request.sessao %}
+                    <a id="buttonLogin" href="{% url "logout" %}">LOGOUT</a>
+                {% else  %}
+                    <a id="buttonLogin" href="{% url "login" %}">LOGIN</a>
+                {% endif %}
+            </div>
+        </header>
+        {%block content %}
+        {% endblock %}
+        <footer>
+            <h1>Faculdade Impacta Tecnologia</h1>
+        </footer>
+
+    </body>
+</html>

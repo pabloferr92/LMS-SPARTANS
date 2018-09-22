@@ -1,0 +1,33 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+			<div class="containers" id="novocurso">
+				<form id="formularioCurso" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
+                    {% if solicitacao.idsolicitacaomatricula %}
+                    	<h1>APROVAR SOLICITACAO</h1>
+                    {% else %}
+	                    <h1>APROVAR SOLICITACAO</h1>
+                    {% endif %}
+					<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">{{solicitacao.idaluno.nome}}</strong>
+                            <select name='status' class="inputForm" >
+                                <option value="SOLICITADA">SOLICITACADA</option>
+                                <option value="APROVADA">APROVADA</option>
+                                <option value="CANCELADA">REJEITADA</option>
+                                <option value="CANCELADA">CANCELADA</option>
+                            </select>
+                        </label>
+                    </div>
+				    <div id="divSubmit">
+                        <input type="submit" class="btn">
+                    </div>
+                </form>
+            </div>
+
+			</div>
+		</main>
+	</body>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+{% load %}
+	<body id="bodyPrincipal">
+		<main>
+            <div class="containers" id="novoaluno">
+                <form id="formulario" autocomplete="off" method="POST" enctype="multipart/form-data">
+                    {% if atividade.idatividade %}
+                    	<h1>ALTERAR ATIVIDADE</h1>
+                    {% else %}
+                    	<h1>ADICIONAR NOVA ATIVIDADE</h1>
+                    {% endif %}
+
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">TITULO</strong>
+                            <input class="inputForm mandatory" type="text" name="titulo" value="{{atividade.titulo}}" maxlength="50" />
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">DESCRICAO</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="descricao" required="required" maxlength="1000">{{atividade.descricao}}</textarea>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">CONTEUDO</strong>
+														<textarea class="inputForm textAreaPadrao mandatory" name="conteudo" maxlength="1000">{{atividade.conteudo}}</textarea>
+                        </label>
+                    </div>
+					<div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">TIPO</strong>
+                            <select name='tipo' class="inputForm mandatory">
+                                <option value="">SELECIONE</option>
+                                <option value="RESPOSTA ABERTA" {% if atividade.tipo == "RESPOSTA ABERTA" %} selected {% endif %}>RESPOSTA ABERTA</option>
+                                <option value="TESTE" {% if atividade.tipo == "TESTE" %} selected {% endif %}>TESTE</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="containerInputForm">
+                        <label class="labelForm">
+                            <strong class="strongLabelForm">EXTRA</strong>
+														<textarea class="inputForm textAreaPadrao" name="extra" required="required" maxlength="1000">{{atividade.extra}}</textarea>
+                        </label>
+                    </div>
+                    <div id="divSubmitCurso">
+                        <input type="submit" class="btn" value="SALVAR">
+                    </div>
+                </form>
+            </div>
+		</main>
+	</body>
+{% endblock %}

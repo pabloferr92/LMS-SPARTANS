@@ -1,0 +1,40 @@
+{% extends "baseRestrito.html" %}
+{% block content %}
+        <main>
+            <div>
+                <div>
+                    <h1 class="tituloCrud">LISTA DE MEDIAS DE ALUNOS - {{request.sessao.usuario.nome}}</h1>
+                </div>
+                {% for materia in materias %}
+                    <h3>{{materia.nome}}</h3>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        ALUNO
+                                    </th>
+                                    <th>
+                                        MÉDIA
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for aluno in materia.alunos %}
+                                    <tr>
+                                        <td>
+                                            {{ aluno.nome }}
+                                        </td>
+                                        <td>
+                                            {{ aluno.media }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+            
+                {% endfor %}
+            </div>
+        </main>
+{% endblock %}

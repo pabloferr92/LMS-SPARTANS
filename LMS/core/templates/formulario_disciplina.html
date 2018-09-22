@@ -1,0 +1,53 @@
+{% extends "baseforms.html" %}
+{% block content %}
+
+		<main>
+			<div class="containers" id="novocurso">
+				<form id="formularioCurso" autocomplete="off" method="POST" action="painel_admin.html">
+					<h1>ADICIONAR NOVA DISCIPLINA</h1>
+
+				    <fieldset>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">NOME DA DISCIPLINA</strong>
+	                            <input class="inputForm" type="text" name="nome_disciplina" placeholder="DEVOPS" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">CARGA HORÁRIA</strong>
+	                            <input class="inputForm" type="number" name="carga_horaria" required="required">
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">OBJETIVO</strong>
+	                            <textarea class="inputForm textAreaPadrao" name="objetivo"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">COMPETÊNCIAS</strong>
+	                            <textarea class="inputForm textAreaCurso" name="competencias"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">BIBLIOGRAFIA</strong>
+	                            <textarea class="inputForm textAreaCurso" name="bibliografia"></textarea>
+	                        </label>
+						</div>
+						<div class="containerInputForm">
+	                        <label class="labelForm">
+	                            <strong class="strongLabelForm">CRITÉRIOS DE AVALIAÇÃO</strong>
+	                            <textarea class="inputForm textAreaCurso" name="criterios_avaliacao"></textarea>
+	                        </label>
+						</div>
+                        <div id="divSubmitCurso">
+                            <input type="submit" class="btn" value="SALVAR">
+                        </div>
+                    </fieldset>
+                </form>
+			</div>
+		</main>
+{% endblock %}

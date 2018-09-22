@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+		<main id="mainDisciplina">
+			<h1 class="tituloMain">SPARTANS<br/>É NOIS QUE VOA.</h1>
+            <img src="{% static 'img/search.png' %}" alt="apresentação da spartans" id="imgTopo">
+			<h1 class="titulosContainer"> {{ nome }} </h1>
+			<div>
+				<div class='containers'>
+				 	<div class="disciplina" >
+						<h2 class="tituloDisciplina" id="tituloDisciplina3">Objetivo</h2>
+            <p class="textoDisciplina" id="textoDisciplina1">{{ objetivo }}</p>
+          </div>
+          <div class="disciplina" >
+						<h2 class="tituloDisciplina" id="tituloDisciplina2">Competências</h2>
+						<p class="textoDisciplina" id="textoDisciplina2">{{ competencias }}</p>
+					</div>
+          <div class="disciplina">
+						<h2 class="tituloDisciplina" id="tituloDisciplina3">Bibliografia</h2>
+						<p class="textoDisciplina"  id="textoDisciplina3">{{ bibliografia }}</p>
+					</div>
+					<div class="disciplina" >
+						<h2 class="tituloDisciplina" id="tituloDisciplina3">Avaliação</h2>
+						<p class="textoDisciplina" id="textoDisciplina4">{{ avaliacao }}</p>
+          </div>
+				</div>
+			</div>
+		</main>
+{% endblock %}
